@@ -39,9 +39,6 @@ public class BasicAuthConfiguration
                 .antMatchers("/api/login").permitAll()
                 // authenticate all remaining URLS
                 .anyRequest().fullyAuthenticated().and()
-                /* "/logout" will log the user out by invalidating the HTTP Session,
-                 * cleaning up any {link rememberMe()} authentication that was configured, */
-                // enabling the basic authentication
                 .httpBasic().and()
                 // configuring the session on the server
                 // disabling the CSRF - Cross Site Request Forgery
