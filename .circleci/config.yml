@@ -22,6 +22,7 @@ jobs:
     
     steps:
       - checkout
+      - cd petstore-api
 
       # Download and cache dependencies
       - restore_cache:
