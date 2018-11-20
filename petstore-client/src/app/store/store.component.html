@@ -1,0 +1,12 @@
+<div class="col-md-3">
+  <button (click)="addNewPet()">Add new pet</button>
+</div>
+<div class="col-md-3 float-left">
+  <app-pets></app-pets>
+</div>
+<div class="col-md-3 float-left" [hidden]="isAdd">
+  <app-pet-detail></app-pet-detail>
+</div>
+<div class="col-md-3 float-left" [hidden]="!isAdd">
+  <app-pet-add></app-pet-add>
+</div>

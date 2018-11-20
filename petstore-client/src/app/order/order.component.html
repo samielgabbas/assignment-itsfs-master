@@ -1,0 +1,12 @@
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center"
+      *ngFor="let order of orders"
+      (click)="onSelect(order)"
+      [class.active]="order === selectedOrder">
+    <span class="badge badge-secondary">{{order.id}}</span>
+    <span>{{order.shipDate | date:'dd-MM-yyyy HH:mm:ss'}}</span>
+    <span>{{order.status}}</span>
+    <span>{{order.petId}}</span>
+    <button [disabled]="!(order.status=='PLACED')"  class="btn btn-danger btn-sm" (click)="delete(order); $event.stopPropagation()">x</button>
+  </li>
+</ul>
